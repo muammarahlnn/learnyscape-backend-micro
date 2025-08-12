@@ -1,7 +1,7 @@
 services:
   pg-user-1: &pg-user-common
     image: "bitnami/postgresql-repmgr:latest"
-    restart: always
+    restart: no
     container_name: pg-user-1
     environment: &pg-user-env
       POSTGRESQL_POSTGRES_PASSWORD: postgres
@@ -41,7 +41,7 @@ services:
 
   pgpool-user:
     image: "bitnami/pgpool:latest"
-    restart: always
+    restart: no
     container_name: pgpool-user
     environment:
       PGPOOL_BACKEND_NODES: 0:pg-user-1:5432,1:pg-user-2:5432,2:pg-user-3:5432
@@ -62,7 +62,7 @@ services:
 
   pg-auth-1: &pg-auth-common
     image: "bitnami/postgresql-repmgr:latest"
-    restart: always
+    restart: no
     container_name: pg-auth-1
     environment: &pg-auth-env
       POSTGRESQL_POSTGRES_PASSWORD: postgres
@@ -102,7 +102,7 @@ services:
 
   pgpool-auth:
     image: "bitnami/pgpool:latest"
-    restart: always
+    restart: no
     container_name: pgpool-auth
     environment:
       PGPOOL_BACKEND_NODES: 0:pg-auth-1:5432,1:pg-auth-2:5432,2:pg-auth-3:5432
@@ -123,7 +123,7 @@ services:
 
   pg-admin-1: &pg-admin-common
     image: "bitnami/postgresql-repmgr:latest"
-    restart: always
+    restart: no
     container_name: pg-admin-1
     environment: &pg-admin-env
       POSTGRESQL_POSTGRES_PASSWORD: postgres
@@ -163,7 +163,7 @@ services:
 
   pgpool-admin:
     image: "bitnami/pgpool:latest"
-    restart: always
+    restart: no
     container_name: pgpool-admin
     environment:
       PGPOOL_BACKEND_NODES: 0:pg-admin-1:5432,1:pg-admin-2:5432,2:pg-admin-3:5432
@@ -184,7 +184,7 @@ services:
 
   pg-verification-1: &pg-verification-common
     image: "bitnami/postgresql-repmgr:latest"
-    restart: always
+    restart: no
     container_name: pg-verification-1
     environment: &pg-verification-env
       POSTGRESQL_POSTGRES_PASSWORD: postgres
@@ -224,7 +224,7 @@ services:
 
   pgpool-verification:
     image: "bitnami/pgpool:latest"
-    restart: always
+    restart: no
     container_name: pgpool-verification
     environment:
       PGPOOL_BACKEND_NODES: 0:pg-verification-1:5432,1:pg-verification-2:5432,2:pg-verification-3:5432

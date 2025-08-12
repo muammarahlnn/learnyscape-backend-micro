@@ -1,7 +1,7 @@
 services:
   mailhog:
     image: "mailhog/mailhog:latest"
-    restart: always
+    restart: no
     container_name: mailhog
     ports:
       - "1035:1025"
@@ -14,7 +14,7 @@ services:
       context: ./../user-service
       dockerfile: Dockerfile.dev
     container_name: learnyscape-user-service
-    restart: always
+    restart: no
     networks:
       - production
 
@@ -23,7 +23,7 @@ services:
       context: ./../verification-service
       dockerfile: Dockerfile.dev
     container_name: learnyscape-verification-service
-    restart: always
+    restart: no
     networks:
       - production
 
@@ -32,7 +32,7 @@ services:
       context: ./../auth-service
       dockerfile: Dockerfile.dev
     container_name: learnyscape-auth-service
-    restart: always
+    restart: no
     networks:
       - production
 
@@ -41,7 +41,7 @@ services:
       context: ./../admin-service
       dockerfile: Dockerfile.dev
     container_name: learnyscape-admin-service
-    restart: always
+    restart: no
     networks:
       - production
 
@@ -50,7 +50,7 @@ services:
       context: ./../mail-service
       dockerfile: Dockerfile.dev
     container_name: learnyscape-mail-service
-    restart: always
+    restart: no
     networks:
       - production
 
@@ -59,7 +59,7 @@ services:
       context: ./../gateway
       dockerfile: Dockerfile.dev
     container_name: learnyscape-api-gateway
-    restart: always
+    restart: no
     ports:
       - "8000:8000"
     depends_on:

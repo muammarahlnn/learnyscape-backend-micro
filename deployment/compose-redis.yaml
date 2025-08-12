@@ -1,7 +1,7 @@
 services:
   redis-1: &redis-common
     image: "bitnami/redis-cluster:latest"
-    restart: unless-stopped
+    restart: no
     container_name: redis-1
     environment: &redis-env
       REDIS_PASSWORD: ${REDIS_PASSWORD}

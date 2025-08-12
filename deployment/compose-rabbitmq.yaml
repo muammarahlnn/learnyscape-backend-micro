@@ -3,7 +3,7 @@ services:
     image: bitnami/rabbitmq:latest
     container_name: rabbitmq-1
     hostname: rabbitmq-1
-    restart: always
+    restart: no
     environment: &rabbitmq-env
       RABBITMQ_USERNAME: guest
       RABBITMQ_PASSWORD: guest
